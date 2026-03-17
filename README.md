@@ -16,6 +16,7 @@ A TypeScript-based [Model Context Protocol (MCP)](https://modelcontextprotocol.i
 - **Complete Tool Coverage**: Every MCP tool is accessible from the browser: add/view/delete documents, semantic search, AI search, file uploads, and context window exploration
 - **Drag & Drop Uploads**: Upload `.txt`, `.md`, and `.pdf` files directly from the browser
 - **Configurable**: Disable with `START_WEB_UI=false` or change the port with `WEB_PORT`
+- **MCP-safe Logging**: Web UI startup messages are written to stderr so stdio MCP clients can initialize cleanly while the browser UI remains enabled
 
 ### 🔍 Search & Intelligence
 - **Hybrid Search**: Combined full-text and vector similarity powered by Orama, for both single-document and cross-document queries

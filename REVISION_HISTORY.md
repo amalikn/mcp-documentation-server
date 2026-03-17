@@ -17,3 +17,6 @@ Repository-local revision summary.
 ## 2026-03-13
 - Recorded and prepared local enhancements for publication.
 - Updated repository documentation to reflect current operational and integration changes.
+
+## 2026-03-17
+- Fixed local MCP startup compatibility by moving Web UI banner output from stdout to stderr so stdio clients can initialize without disabling `START_WEB_UI`.

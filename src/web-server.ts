@@ -16,6 +16,15 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
+function logBannerToStderr(port: number): void {
+    process.stderr.write(
+        `\n  🌐 MCP Documentation Server - Web UI\n` +
+        `  ────────────────────────────────────\n` +
+        `  Local:   http://localhost:${port}\n` +
+        `  Network: http://0.0.0.0:${port}\n\n`
+    );
+}
+
 /**
  * Start the web UI server. Returns the http.Server instance.
  * Accepts an optional shared DocumentManager to avoid duplicating state.
@@ -289,10 +298,7 @@ app.get('/{*splat}', (_req, res) => {
 
     // Start server
     const server = app.listen(PORT, () => {
-        console.log(`\n  🌐 MCP Documentation Server - Web UI`);
-        console.log(`  ────────────────────────────────────`);
-        console.log(`  Local:   http://localhost:${PORT}`);
-        console.log(`  Network: http://0.0.0.0:${PORT}\n`);
+        logBannerToStderr(PORT);
     });
 
     return server;
